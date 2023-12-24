@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SingletoneTest {
+public class SingletonTest {
 
     @Test
     @DisplayName("스프링 없는 순수 DI 컨테이너")
