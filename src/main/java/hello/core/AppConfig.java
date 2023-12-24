@@ -49,10 +49,14 @@ public class AppConfig { // 애플리케이션의 실제 동작에 필요한 구
     //
     @Bean
     public MemberService memberService(){
+        // AppConfig 호출로그
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
     @Bean
     public OrderService orderService() {
+        // AppConfig 호출로그
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());
@@ -60,6 +64,8 @@ public class AppConfig { // 애플리케이션의 실제 동작에 필요한 구
     }
     @Bean
     public MemberRepository memberRepository(){
+        // AppConfig 호출로그
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
