@@ -60,6 +60,7 @@ public class AppConfig { // 애플리케이션의 실제 동작에 필요한 구
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());
+        //return null;
 
     }
     @Bean
