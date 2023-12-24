@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LogDemoController {
 
     private final LogDemoService logDemoService;
-    //private final MyLogger myLogger;
-    private final ObjectProvider<MyLogger> myLoggerObjectProvider;
+    private final MyLogger myLogger;
+   // private final ObjectProvider<MyLogger> myLoggerObjectProvider;
 
     @RequestMapping("log-demo")
     @ResponseBody
     public String logDemo(HttpServletRequest request) {
         String requestURL = request.getRequestURL().toString();
-        //추가
-        MyLogger myLogger = myLoggerObjectProvider.getObject();
+        //추가 -> proxy 바꾸면서 다시 주석
+        //MyLogger myLogger = myLoggerObjectProvider.getObject();
         myLogger.setRequestURL(requestURL);
 
         myLogger.log("controller test");
